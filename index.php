@@ -72,6 +72,14 @@
 			<p class="text-center">The rest of my projects will come soon.</p>
 		</div>-->
 		<br>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+		  (adsbygoogle = window.adsbygoogle || []).push({
+		    google_ad_client: "ca-pub-5131845440627870",
+		    enable_page_level_ads: true
+		  });
+		</script>
+		<br>
 		<img id="eurobeat"  src="img/eurobeat.png">
 		<br>
 		<p class="text-center text-muted small">This website has no affiliation with the Initial D brand nor any of the artists.</p>
