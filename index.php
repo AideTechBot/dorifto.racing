@@ -52,16 +52,19 @@
 					<option value="13">OTHER</option>
 				</select>
 				<br>
-				<input type="file" name="audio" id="songUpload" disabled="true">
+				<input type="file" name="audio" id="songUpload" style="display:none">
 			    <h4>At what time (in seconds) do you want the bass to drop?</h4>
 			    <input type="number" name="quantity" min="1"><br>
 			    <input type="submit" value="Upload Image" name="submit">
 			</form>
+			<?php
+				
+			?>
 			<script>
 				document.getElementById("songSelect").onchange = function () {
-					document.getElementById("songUpload").disabled = true;
+					document.getElementById("songUpload").style.display = "none";
 					if (this.value == '13')
-						document.getElementById("songUpload").disabled = false;
+						document.getElementById("songUpload").style.display = "block";
 				};
 			</script>
 		</div>
