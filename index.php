@@ -58,7 +58,11 @@
 			    <input type="submit" value="Upload Image" name="submit">
 			</form>
 			<?php
-				
+			if (isset($_GET['error'])) {
+                if ($_GET['error'] == 1) {
+                    echo '<p class="error">Error while processing request.</p>';
+                }
+            }	
 			?>
 			<script>
 				document.getElementById("songSelect").onchange = function () {
