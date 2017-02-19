@@ -6,7 +6,6 @@ define("PASSWORD", "AiwnMpowmKE");    // The database password.
 define("DATABASE", "dorifto");    // The database name.
 
 $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
-error_log("SELECT * FROM iplist WHERE ip='{$_SERVER['REMOTE_ADDR']}'");
 $ips = $mysqli->query("SELECT * FROM iplist WHERE ip='{$_SERVER['REMOTE_ADDR']}'");
 if (!$ips) {
     throw new Exception("Database Error [{$mysqli->database->errno}] {$mysqli->database->error}");
@@ -57,6 +56,7 @@ if(isset($_POST["submit"]) && isset($_POST["song"]) && isset($_POST["quantity"])
 		$m = move_uploaded_file($_FILES["movie"]["tmp_name"], $target_file);
 		$a = move_uploaded_file($_FILES["audio"]["tmp_name"], $audio_file);
 		$t = ($_POST["song"] == 13);
+		error_log($m . " " . $a . " " . $t . "----------------------------------------------------------------------------------------------------------");
 		if (($m && !$t) || ($m && $a))
 		{
 			$songs = array(64,24,41,27,30,6,74,32,38,154,31,28);
