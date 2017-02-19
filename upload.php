@@ -13,6 +13,7 @@ if (!$ips) {
 
 while($row = $ips->fetch_assoc())
 {
+	error_log("---------------------------------------------------------------------------------------------------------------------------------");
 	if(strtotime($mysql_timestamp) < strtotime("-10 minutes"))
 	{
 		break;
