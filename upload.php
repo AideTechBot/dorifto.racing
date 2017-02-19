@@ -21,6 +21,7 @@ while($row = $ips->fetch_assoc())
 	else
 	{
 		header('Location: index.php?error=3');
+		exit();
 	}
 }
 
