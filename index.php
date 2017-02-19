@@ -18,7 +18,7 @@
   </head>
   <body>
   	<!--google analytics-->
-  	<!--<?php include_once("analyticstracking.php") ?>-->
+  	<?php include_once("analyticstracking.php") ?>
 	<div class="col-sm-3"></div>
 	<div class="col-sm-6" id="main-col">
 		<div class="row header-row">
