@@ -96,7 +96,7 @@ if(isset($_POST["submit"]) && isset($_POST["song"]) && isset($_POST["quantity"])
 				echo readfile("done/output". $count .".mp4");
 				if(file_exists("done/output". $count .".mp4")) { unlink("done/output". $count .".mp4"); }
 				$check = $mysqli->query("SELECT * FROM iplist WHERE ip=\'{$_SERVER['REMOTE_ADDR']}\'");
-				if(mysqli_num_rows($check) == 0)
+				if($check->num_rows == 0)
 				{
 					$mysqli->query("INSERT INTO iplist (ip, timestamp) VALUES ('{$_SERVER['REMOTE_ADDR']}',now())");
 				}
