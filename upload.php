@@ -56,7 +56,7 @@ if(isset($_POST["submit"]) && isset($_POST["song"]) && isset($_POST["quantity"])
 		$m = move_uploaded_file($_FILES["movie"]["tmp_name"], $target_file);
 		$a = move_uploaded_file($_FILES["audio"]["tmp_name"], $audio_file);
 		$t = ($_POST["song"] == 13);
-		error_log($m . " " . $a . " " . $t . "----------------------------------------------------------------------------------------------------------");
+		error_log($_FILES["movie"]["tmp_name"] . " " . $ . " " . $t . "----------------------------------------------------------------------------------------------------------");
 		if (($m && !$t) || ($m && $a))
 		{
 			$songs = array(64,24,41,27,30,6,74,32,38,154,31,28);
