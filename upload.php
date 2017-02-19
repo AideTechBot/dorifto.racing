@@ -6,6 +6,7 @@ define("PASSWORD", "AiwnMpowmKE");    // The database password.
 define("DATABASE", "dorifto");    // The database name.
 
 $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+error_log("SELECT * FROM iplist WHERE ip=\'{$_SERVER['REMOTE_ADDR']}\'");
 $ips = $mysqli->query("SELECT * FROM iplist WHERE ip=\'{$_SERVER['REMOTE_ADDR']}\'");
 if (!$ips) {
     throw new Exception("Database Error [{$mysqli->database->errno}] {$mysqli->database->error}");
