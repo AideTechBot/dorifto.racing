@@ -61,7 +61,7 @@ if(isset($_POST["submit"]) && isset($_POST["song"]) && isset($_POST["quantity"])
 			if(file_exists($audio_file) && $_POST["song"] == 13) { unlink($audio_file); }
 			if($flag != 0 && $flag2 != 0)
 			{
-				header('Location: index.php?error=1');	
+				header('Location: index.php?error=3');	
 	    	}
 			else
 			{
@@ -75,7 +75,7 @@ if(isset($_POST["submit"]) && isset($_POST["song"]) && isset($_POST["quantity"])
 		} else {
 			if(file_exists($target_file)) { unlink($target_file); }
 			if(file_exists($audio_file)) { unlink($audio_file); } 
-	        header('Location: index.php?error=1');
+	        header('Location: index.php?error=4');
 	    }
 	}
 }
