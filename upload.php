@@ -1,28 +1,38 @@
 <?php
-$target_dir = "../uploads/";
-$target_file = $target_dir . basename($_FILES["fileUpload"]["name"]);
+$target_dir = "../upload/";
 $uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if it got submit
 if(isset($_POST["submit"]) && isset($_POST["song"]) && isset($_POST["quantity"])) {
 
+	$ext = end((explode(".", $_FILES["movie"]["name"])));
 	//limit file type
-    if($imageFileType != "mp4" && $imageFileType != "gif" && $imageFileType != "mov" && $imageFileType != "avi") {
-		echo "Sorry, only mp4, avi, mov and gif allowed.";
+    if($ext != "mp4" && $ext != "gif" && $ext != "mov" && $ext != "avi") {
+		header('Location: ../index.php?error=2');
 		$uploadOk = 0;
 	}
 	// Check file size
-	if ($_FILES["fileToUpload"]["size"] > 1000000000) {
-    	echo "Sorry, your file is too large.";
+	if ($_FILES["movie"]["size"] > 100000000) {
+    	header('Location: ../index.php?error=1');
     	$uploadOk = 0;
 	}
 
 	//upload the file
-	if(!$uploadOk) {
-		if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $target_file)) {
-	        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+	if($uploadOk) {
+		$count = 0;
+		$target_file = $target_dir . $count . '.' . $ext;
+		while(true) {
+			if(!file_exists($target_file)) {
+				break;
+			}
+			$count++;
+			error_log($count);
+			$target = $target_dir . $count . '.'  . $ext;
+		}
+
+		if (move_uploaded_file($_FILES["movie"]["tmp_name"], $target_file)) {
+			header('Location: ../index.php');
 	    } else {
-	        echo "Sorry, there was an error uploading your file.";
+	        header('Location: ../index.php?error=1');
 	    }
 	}
 }

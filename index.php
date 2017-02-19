@@ -62,6 +62,9 @@
                 if ($_GET['error'] == 1) {
                     echo '<p class="error">Error while processing request.</p>';
                 }
+				if ($_GET['error'] == 2) { 
+					echo '<p class="error">Only mp3, wav, gif, mp4, mov and avi formats allowed.</p>';
+				}
             }	
 			?>
 			<script>
