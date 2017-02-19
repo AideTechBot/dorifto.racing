@@ -14,7 +14,7 @@ if (!$ips) {
 while($row = $ips->fetch_assoc())
 {
 	error_log("------".strtotime($row['timestamp'])."-----------".strtotime("-10 minutes")."----------------------------------------------------------------------------------------------------------------");
-	if(strtotime($row['timestamp']) < strtotime("-10 minutes"))
+	if(intval(strtotime($row['timestamp'])) < intval(strtotime("-10 minutes")))
 	{
 		break;
 	}
