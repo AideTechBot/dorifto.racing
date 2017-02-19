@@ -1,4 +1,28 @@
 <?php
+//Define database details
+define("HOST", "localhost");     // The host you want to connect to.
+define("USER", "sec_user");    // The database username. 
+define("PASSWORD", "AiwnMpowmKE");    // The database password. 
+define("DATABASE", "dorifto");    // The database name.
+
+$mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+$ips = $mysqli->query("SELECT * FROM iplist WHERE ip=\'{$_SERVER['REMOTE_ADDR']}\'");
+if (!$ips) {
+    throw new Exception("Database Error [{$mysqli->database->errno}] {$mysqli->database->error}");
+}
+
+while($row = $ips->fetch_assoc())
+{
+	if(strtotime($mysql_timestamp) < strtotime("-10 minutes"))
+	{
+		break;
+	}
+	else
+	{
+		header('Location: index.php?error=3');
+	}
+}
+
 $target_dir = "../upload/";
 $uploadOk = 1;
 // Check if it got submit
@@ -61,7 +85,7 @@ if(isset($_POST["submit"]) && isset($_POST["song"]) && isset($_POST["quantity"])
 			if(file_exists($audio_file) && $_POST["song"] == 13) { unlink($audio_file); }
 			if($flag != 0 && $flag2 != 0)
 			{
-				header('Location: index.php?error=3');	
+				header('Location: index.php?error=1');	
 	    	}
 			else
 			{
@@ -70,12 +94,21 @@ if(isset($_POST["submit"]) && isset($_POST["song"]) && isset($_POST["quantity"])
 				header("Content-disposition: attachment; filename=\"output". $count .".mp4\""); 
 				echo readfile("done/output". $count .".mp4");
 				if(file_exists("done/output". $count .".mp4")) { unlink("done/output". $count .".mp4"); }
+				$check = $mysqli->query("SELECT * FROM iplist WHERE ip=\'{$_SERVER['REMOTE_ADDR']}\'");
+				if(mysql_num_rows($check) == 0)
+				{
+					$mysqli->query("INSERT INTO iplist (ip, timestamp) VALUES ({$_SERVER['REMOTE_ADDR']},now())");
+				}
+				else
+				{
+					$mysqli->query("UPDATE iplist SET timestamp=now() WHERE ip={$_SERVER['REMOTE_ADDR']}");
+				}			
 			}
 			
 		} else {
 			if(file_exists($target_file)) { unlink($target_file); }
 			if(file_exists($audio_file)) { unlink($audio_file); } 
-	        header('Location: index.php?error=4');
+	        header('Location: index.php?error=1');
 	    }
 	}
 }
