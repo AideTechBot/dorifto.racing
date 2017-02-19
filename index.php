@@ -53,9 +53,11 @@
 				</select>
 				<br>
 				<input type="file" name="audio" id="songUpload" style="display:none">
-			    <h4>At what time (in seconds) do you want the bass to drop?</h4>
+			    <h4 class="songUP" style="display:none">At what time does the song climax?</h4>
+				<input type="number" name="songdrop" min="1" class="songUP" style="display:none">
+				<h4>At what time (in seconds) do you want the song to climax in the video?</h4>
 			    <input type="number" name="quantity" min="1"><br>
-			    <input type="submit" value="Upload Image" name="submit">
+			    <input type="submit" value="NANI? PANDA TRUENO??" name="submit">
 			</form>
 			<?php
 			if (isset($_GET['error'])) {
@@ -68,10 +70,31 @@
             }	
 			?>
 			<script>
+				function getElementsByClass( searchClass, domNode, tagName) { 
+					if (domNode == null) domNode = document;
+					if (tagName == null) tagName = '*';
+					var el = new Array();
+					var tags = domNode.getElementsByTagName(tagName);
+					var tcl = " "+searchClass+" ";
+					for(i=0,j=0; i<tags.length; i++) { 
+						var test = " " + tags[i].className + " ";
+						if (test.indexOf(tcl) != -1) 
+							el[j++] = tags[i];
+					} 
+					return el;
+				} 
+
+
 				document.getElementById("songSelect").onchange = function () {
 					document.getElementById("songUpload").style.display = "none";
+					getElementsByClass('songUP')[0].style.display = "none";
+					getElementsByClass('songUP')[1].style.display = "none";
 					if (this.value == '13')
+					{
 						document.getElementById("songUpload").style.display = "block";
+						getElementsByClass('songUP')[0].style.display = "block";
+						getElementsByClass('songUP')[1].style.display = "block";
+					}	
 				};
 			</script>
 		</div>
@@ -92,7 +115,7 @@
 		<br>
 		<img id="eurobeat"  src="img/eurobeat.png">
 		<br>
-		<p class="text-center text-muted small">This website has no affiliation with the Initial D brand nor any of the artists.</p>
+		<p class="text-center text-muted small">This website has no affiliation with the Initial D brand nor any of the artists of the songs. I do not own the songs and they are used for the purpose of parody.</p>
 	</div>
 	<div class="col-sm-3"></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

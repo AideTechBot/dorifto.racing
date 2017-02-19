@@ -25,6 +25,9 @@ body {
 #songUpload {
   margin: 0 auto;
 }
+.songUP {
+  margin: 0 auto;
+}
 
 .header-dorifto {
   max-width: 500px;
