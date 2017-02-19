@@ -98,11 +98,11 @@ if(isset($_POST["submit"]) && isset($_POST["song"]) && isset($_POST["quantity"])
 				$check = $mysqli->query("SELECT * FROM iplist WHERE ip=\'{$_SERVER['REMOTE_ADDR']}\'");
 				if(mysql_num_rows($check) == 0)
 				{
-					$mysqli->query("INSERT INTO iplist (ip, timestamp) VALUES ({$_SERVER['REMOTE_ADDR']},now())");
+					$mysqli->query("INSERT INTO iplist (ip, timestamp) VALUES ('{$_SERVER['REMOTE_ADDR']}',now())");
 				}
 				else
 				{
-					$mysqli->query("UPDATE iplist SET timestamp=now() WHERE ip={$_SERVER['REMOTE_ADDR']}");
+					$mysqli->query("UPDATE iplist SET timestamp=now() WHERE ip='{$_SERVER['REMOTE_ADDR']}'");
 				}			
 			}
 			
