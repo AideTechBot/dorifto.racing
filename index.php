@@ -57,8 +57,8 @@
 				<input type="number" name="songdrop" min="1" class="songUP" style="display:none">
 				<h4>At what time (in seconds) do you want the song to climax in the video?</h4>
 			    <input type="number" name="quantity" min="1"><br>
-			    <input type="submit" value="NANI? PANDA TRUENO??" name="submit" onclick="document.getElementById('process').innerHTML = 'Processing...';">
-				<p id="proccess"></p>
+			    <input type="submit" value="NANI? PANDA TRUENO??" name="submit" onclick="document.getElementByClass('error')[0].innerHTML = 'Processing...';">
+				<p class="error"></p>
 			</form>
 			<?php
 			if (isset($_GET['error'])) {
