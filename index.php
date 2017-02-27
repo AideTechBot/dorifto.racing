@@ -19,6 +19,21 @@
   <body>
   	<!--google analytics-->
   	<?php include_once("analyticstracking.php") ?>
+	<script>
+					function getElementsByClass( searchClass, domNode, tagName) { 
+					if (domNode == null) domNode = document;
+					if (tagName == null) tagName = '*';
+					var el = new Array();
+					var tags = domNode.getElementsByTagName(tagName);
+					var tcl = " "+searchClass+" ";
+					for(i=0,j=0; i<tags.length; i++) { 
+						var test = " " + tags[i].className + " ";
+						if (test.indexOf(tcl) != -1) 
+							el[j++] = tags[i];
+					} 
+					return el;
+				} 
+	</script>
 	<div class="col-sm-3"></div>
 	<div class="col-sm-6" id="main-col">
 		<div class="row header-row">
@@ -74,21 +89,6 @@
             }	
 			?>
 			<script>
-				function getElementsByClass( searchClass, domNode, tagName) { 
-					if (domNode == null) domNode = document;
-					if (tagName == null) tagName = '*';
-					var el = new Array();
-					var tags = domNode.getElementsByTagName(tagName);
-					var tcl = " "+searchClass+" ";
-					for(i=0,j=0; i<tags.length; i++) { 
-						var test = " " + tags[i].className + " ";
-						if (test.indexOf(tcl) != -1) 
-							el[j++] = tags[i];
-					} 
-					return el;
-				} 
-
-
 				document.getElementById("songSelect").onchange = function () {
 					document.getElementById("songUpload").style.display = "none";
 					getElementsByClass('songUP')[0].style.display = "none";
