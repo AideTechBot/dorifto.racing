@@ -57,7 +57,8 @@
 				<input type="number" name="songdrop" min="1" class="songUP" style="display:none">
 				<h4>At what time (in seconds) do you want the song to climax in the video?</h4>
 			    <input type="number" name="quantity" min="1"><br>
-			    <input type="submit" value="NANI? PANDA TRUENO??" name="submit">
+			    <input type="submit" value="NANI? PANDA TRUENO??" name="submit" onclick="document.getElementById('process').innerHTML = 'Processing...';">
+				<p id="proccess"></p>
 			</form>
 			<?php
 			if (isset($_GET['error'])) {
@@ -115,16 +116,18 @@
 		    enable_page_level_ads: true
 		  });
 		</script>
+		<span align="center" class='ad'>
 		<script type="text/javascript">
-		  ( function() {
-		    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-		    var unit = {"calltype":"async[2]","publisher":"aidetechbot","width":320,"height":50,"sid":"Chitika Default"};
-		    var placement_id = window.CHITIKA.units.length;
-		    window.CHITIKA.units.push(unit);
-		    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-		}());
+	  ( function() {
+ 	  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+    var unit = {"calltype":"async[2]","publisher":"aidetechbot","width":320,"height":50,"sid":"Chitika Default"};
+    var placement_id = window.CHITIKA.units.length;
+    window.CHITIKA.units.push(unit);
+    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
 		</script>
 		<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+		</span>
 		<br>
 		<img id="eurobeat"  src="img/eurobeat.png">
 		<br>
