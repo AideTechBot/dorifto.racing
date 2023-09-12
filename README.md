@@ -7,5 +7,5 @@ Dorifto - eurobeat overlay generator
 Run the server:
 
 ```bash
-npm run start
+bun run start
 ```
