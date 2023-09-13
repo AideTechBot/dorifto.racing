@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
 import { logger } from "hono/logger";
+import { homePageHandler } from "./routes/home-page/home-page.handler";
 
 const app = new Hono();
 
@@ -13,6 +14,6 @@ app.use("/favicon.ico", serveStatic({ path: "./public/favicon.ico" }));
 app.use("*", logger());
 
 // Map all route endpoint handlers
-app.get("/", (c) => c.html(<div>Hello World!</div>));
+app.get("/", homePageHandler);
 
 export default app;
