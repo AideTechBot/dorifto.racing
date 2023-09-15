@@ -1,0 +1,132 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-image: url("/img/japan2.jpg");
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: 50% 20%;
+  background-color: #000000;
+}
+@media (max-width: 1000px) {
+  body {
+    background-size: 250%;
+  }
+}
+
+header img.logo {
+  max-width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1500px) {
+  header img.logo {
+    max-width: 300px;
+  }
+}
+@media (max-width: 1000px) {
+  header img.logo {
+    max-width: 250px;
+  }
+}
+
+header span {
+  display: flex;
+  flex-wrap: flex;
+  gap: 10px;
+}
+
+header span > h2 {
+  white-space: nowrap;
+}
+
+header span > h2 > i {
+  white-space: nowrap;
+  padding-right: 5px;
+}
+
+main .file-upload {
+  margin: 0 auto;
+}
+
+main .song-upload {
+  margin: 0 auto;
+}
+
+main .song-upload-label {
+  margin: 0 auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: red;
+}
+
+/* mouse over link */
+a:hover {
+  color: #aa0000;
+}
+
+header .fa {
+  color: #ffffff;
+}
+
+header h2 {
+  font-size: 25px;
+}
+
+.item {
+  position: relative;
+  height: 100%;
+}
+
+.error {
+  text-align: center;
+  font-size: 20px;
+  color: #ff0000;
+}
+
+header {
+  /*background-color:#1D2731;
+	color: #FFFFFF;*/
+  display: table;
+  margin: 0 auto;
+}
+
+main {
+  background-color: #ffffff;
+  padding: 5px 5px 5px 5px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+}
+
+footer img.eurobeat-footer {
+  max-width: 200px;
+  margin: 20px auto;
+}
+
+footer p.footer-notice {
+  font-size: smaller;
+  color: rgb(100, 100, 100);
+  text-align: center;
+  margin: 0px 20px;
+}
