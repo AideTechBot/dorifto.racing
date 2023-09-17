@@ -51,11 +51,62 @@ header span > h2 > i {
   padding-right: 5px;
 }
 
+main {
+  margin: 0 25%;
+  background-color: #ffffff;
+  padding: 5px 5px 5px 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1000px) {
+  main {
+    margin: 0 auto;
+  }
+}
+
 main .file-upload {
   margin: 0 auto;
 }
 
-main .song-upload {
+main form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto 5px auto;
+}
+
+main form > input[type="file"] {
+  display: none;
+}
+
+main form > label[for="movie"],
+main form > input[type="submit"] {
+  background-color: red;
+  color: white;
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+main form > label[for="movie"] > i {
+  margin-right: 5px;
+}
+
+main form > label[for="movie"]:hover,
+main form > input[type="submit"]:hover {
+  background-color: #aa0000;
+}
+
+main > h2 {
+  margin: 5px auto;
+}
+
+main form > * {
+  margin: 5px auto;
+}
+
+main form .song-upload {
   margin: 0 auto;
 }
 
@@ -107,11 +158,6 @@ header {
 	color: #FFFFFF;*/
   display: table;
   margin: 0 auto;
-}
-
-main {
-  background-color: #ffffff;
-  padding: 5px 5px 5px 5px;
 }
 
 footer {
