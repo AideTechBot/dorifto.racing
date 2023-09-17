@@ -73,29 +73,17 @@ export function HomePage() {
               <label for="song-select">
                 <h3>Select a song or upload your own:</h3>
               </label>
-              <select name="song" id="song-select">
+              <select
+                name="song"
+                id="song-select"
+                hx-get="/other-upload"
+                hx-target=".song-upload-form"
+              >
                 {SONG_OPTIONS.map((song, i) => (
                   <option value={i}>{song}</option>
                 ))}
               </select>
-              <input
-                type="file"
-                name="audio"
-                id="song-upload"
-                style="display:none"
-              />
-              <label for="song-drop">
-                <h3 id="song-upload-label" style="display:none">
-                  At what time does the song climax?
-                </h3>
-              </label>
-              <input
-                type="number"
-                name="song-drop"
-                id="song-drop"
-                min="1"
-                style="display:none"
-              />
+              <div class="song-upload-form" />
               <label for="climax-time">
                 <h3>
                   At what time (in seconds) do you want the song to climax in
