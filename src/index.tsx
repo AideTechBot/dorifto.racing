@@ -7,7 +7,6 @@ import { otherUploadHandler } from "./routes/other-upload/other-upload.handler";
 const app = new Hono();
 
 // Serve static files from the `public` folder
-// app.use("/styles/*", serveStatic({ root: "./public" }));
 app.use("*", serveStatic({ root: "./public" }));
 app.use("/favicon.ico", serveStatic({ path: "./public/favicon.ico" }));
 
