@@ -49,30 +49,33 @@ export function HomePage() {
         </header>
         <main>
           <h2>Overlay your favorite eurobeat onto videos!</h2>
-          <form
-            class="text-center"
-            action="upload.php"
-            method="post"
-            enctype="multipart/form-data"
-          >
-            <h4>Select a video to upload:</h4>
-            <input type="file" name="movie" class="file-upload" />
-            <h4>Select a song or upload your own.</h4>
+          <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="movie">
+              <i class="fa fa-upload" />
+              Select a video to upload
+            </label>
+            <input
+              type="file"
+              id="movie"
+              name="movie"
+              class="file-upload"
+              accepts="video/*"
+            />
+            <h3>Select a song or upload your own:</h3>
             <select name="song" id="songSelect">
               {SONG_OPTIONS.map((song, i) => (
                 <option value={i}>{song}</option>
               ))}
             </select>
-            <br />
             <input
               type="file"
               name="audio"
               class="song-upload"
               style="display:none"
             />
-            <h4 class="song-upload-label" style="display:none">
+            <h3 class="song-upload-label" style="display:none">
               At what time does the song climax?
-            </h4>
+            </h3>
             <input
               type="number"
               name="songdrop"
@@ -80,19 +83,17 @@ export function HomePage() {
               class="songUP"
               style="display:none"
             />
-            <h4>
+            <h3>
               At what time (in seconds) do you want the song to climax in the
               video?
-            </h4>
+            </h3>
             <input type="number" name="quantity" min="1" />
-            <br />
             <input
               type="submit"
               value="NANI? PANDA TRUENO??"
               name="submit"
               onclick="getElementsByClass('error')[0].innerHTML = 'Your download should start shortly...';"
             />
-            <p class="error"></p>
           </form>
           {/* <?php
         if (isset($_GET['error'])) {
