@@ -56,7 +56,8 @@ export function HomePage() {
           <main>
             <h2>Overlay your favorite eurobeat onto videos!</h2>
             <form
-              action="upload.php"
+              hx-post="/upload"
+              hx-target="main"
               method="post"
               enctype="multipart/form-data"
             >
@@ -96,12 +97,7 @@ export function HomePage() {
                 id="climax-time"
                 min="1"
               />
-              <input
-                type="submit"
-                value="NANI? PANDA TRUENO??"
-                name="submit"
-                onclick="getElementsByClass('error')[0].innerHTML = 'Your download should start shortly...';"
-              />
+              <input type="submit" value="NANI? PANDA TRUENO??" name="submit" />
             </form>
             {/* <?php
         if (isset($_GET['error'])) {
@@ -115,20 +111,7 @@ export function HomePage() {
             echo '<p class="error">You need to wait 10 minutes before uploading another.</p>';
           }
               }	
-        ?>
-        <script>
-          document.getElementById("songSelect").onchange = function () {
-            document.getElementById("songUpload").style.display = "none";
-            getElementsByClass('songUP')[0].style.display = "none";
-            getElementsByClass('songUP')[1].style.display = "none";
-            if (this.value == '13')
-            {
-              document.getElementById("songUpload").style.display = "block";
-              getElementsByClass('songUP')[0].style.display = "block";
-              getElementsByClass('songUP')[1].style.display = "block";
-            }	
-          };
-        </script> */}
+            ?>*/}
           </main>
           <footer>
             <img
