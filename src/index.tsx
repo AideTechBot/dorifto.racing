@@ -4,6 +4,8 @@ import { logger } from "hono/logger";
 import { homePageHandler } from "./routes/home-page/home-page.handler";
 import { otherUploadHandler } from "./routes/other-upload/other-upload.handler";
 import { uploadHandler } from "./routes/upload/upload.handler";
+import { jobsProgressHandler } from "./routes/jobs/jobs-progress.handler";
+import { jobsHandler } from "./routes/jobs/jobs.handler";
 
 const app = new Hono();
 
@@ -18,5 +20,7 @@ app.use("*", logger());
 app.get("/", homePageHandler);
 app.get("/other-upload", otherUploadHandler);
 app.post("/upload", uploadHandler);
+app.get("/jobs/:id/progress", jobsProgressHandler);
+app.get("/jobs/:id", jobsHandler);
 
 export default app;

@@ -18,7 +18,9 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "fluent-ffmpeg": "^2.1.2",
     "hono": "^3.6.0",
-    "htmx.org": "^1.9.5"
+    "htmx.org": "^1.9.5",
+    "nanoid": "^5.0.1"
   }
 }
