@@ -28,8 +28,15 @@ yarn-error.log*
 # local env files
 .env*.local
 
-# vercel
-.vercel
+# TODO: create ffmpeg get script
+.env.development
+ffmpeg
+
+# TODO: songs must be added manually
+songs/*
+
+# to keep cut up songs temporarily
+temp/*
 
 # typescript
 *.tsbuildinfo

@@ -7,7 +7,10 @@ export const videoHandler = async (
   climax: number,
   video: File
 ) => {
-  const id = startJob();
+  // TODO: rate limit this
+  // TODO: max file size here
+  // TODO: limit file formats
+  const id = startJob({ song, climax, video });
   return c.html(
     <div
       hx-trigger="done"

@@ -89,6 +89,12 @@ main form > .song-upload-form > input#song-upload {
   display: none;
 }
 
+main .download-button > a {
+  padding: 12px 24px;
+  margin: 15px;
+}
+
+main .download-button > a,
 main form > label[for="video-upload"],
 main form > input[type="submit"],
 main form > .song-upload-form > label[for="song-upload"] {
@@ -106,6 +112,7 @@ main form > .song-upload-form > label[for="song-upload"] > i {
   margin-right: 5px;
 }
 
+main .download-button > a:hover,
 main form > label[for="video-upload"]:hover,
 main form > .song-upload-form > label[for="song-upload"]:hover,
 main form > input[type="submit"]:hover {

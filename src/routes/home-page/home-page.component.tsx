@@ -1,21 +1,6 @@
+import { SONGS } from "utils/constants";
 import { HomePageHead } from "./home-page-head.component";
 import { html } from "hono/html";
-
-const SONG_OPTIONS = [
-  "DEJA VU",
-  "RUNNING IN THE 90S",
-  "NIGHT OF FIRE",
-  "BACK ON THE ROCKS",
-  "DANCING (COOL VIBRATIONS)",
-  "DOGFIGHT",
-  "HEARTBEAT",
-  "I NEED YOUR LOVE",
-  "LOVE IS IN DANGER",
-  "NO ONE SLEEP IN TOKYO",
-  "RAGE YOUR DREAMS",
-  "REMEMBER ME",
-  "OTHER",
-];
 
 export function HomePage() {
   return (
@@ -80,7 +65,7 @@ export function HomePage() {
                 hx-get="/other-upload"
                 hx-target=".song-upload-form"
               >
-                {SONG_OPTIONS.map((song, i) => (
+                {SONGS.map((song, i) => (
                   <option value={i}>{song}</option>
                 ))}
               </select>
