@@ -10,6 +10,7 @@
   "module": "src/index.ts",
   "type": "module",
   "devDependencies": {
+    "@types/fluent-ffmpeg": "^2.1.22",
     "bun-types": "latest",
     "prettier": "^3.0.3",
     "typescript": "4.9.3"

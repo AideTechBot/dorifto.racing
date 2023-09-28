@@ -6,6 +6,7 @@ import { otherUploadHandler } from "./routes/other-upload/other-upload.handler";
 import { uploadHandler } from "./routes/upload/upload.handler";
 import { jobsProgressHandler } from "./routes/jobs/jobs-progress.handler";
 import { jobsHandler } from "./routes/jobs/jobs.handler";
+import { downloadsHandler } from "./routes/downloads/downloads.handler";
 
 const app = new Hono();
 
@@ -22,5 +23,6 @@ app.get("/other-upload", otherUploadHandler);
 app.post("/upload", uploadHandler);
 app.get("/jobs/:id/progress", jobsProgressHandler);
 app.get("/jobs/:id", jobsHandler);
+app.get("/downloads/:file", downloadsHandler);
 
 export default app;
