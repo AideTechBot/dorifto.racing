@@ -5,7 +5,8 @@
   "scripts": {
     "start": "cp node_modules/htmx.org/dist/htmx.min.js public/htmx.min.js && bun run src/index.tsx",
     "dev": "bun --hot run src/index.tsx",
-    "lint": "prettier ./src --write"
+    "lint": "prettier ./src --write",
+    "release": "standard-version"
   },
   "module": "src/index.ts",
   "type": "module",
@@ -13,6 +14,7 @@
     "@types/fluent-ffmpeg": "^2.1.22",
     "bun-types": "latest",
     "prettier": "^3.0.3",
+    "standard-version": "^9.5.0",
     "typescript": "4.9.3"
   },
   "peerDependencies": {
