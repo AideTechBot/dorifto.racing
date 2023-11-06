@@ -4,7 +4,7 @@ import { writeFile } from "node:fs";
 
 import ffmpeg from "fluent-ffmpeg";
 ffmpeg.setFfmpegPath("./ffmpeg");
-import { SONG_CLIMAXES } from "./constants";
+import { SONG_CLIMAXES, TEMP_FILE_DIRECTORY } from "./constants";
 import path from "node:path";
 
 const _jobs: Jobs = {};
@@ -24,9 +24,9 @@ const _jobProcess = async (
   const extension = path.extname(name);
   const songPath = `./songs/${song}.mp3`;
   const startPoint = SONG_CLIMAXES[song] - climax;
-  const tempSongPath = `./temp/${id}.mp3`;
-  const tempVideoPath = `./temp/${id}${extension}`;
-  const tempOutputVideoPath = `./temp/${id}-output${extension}`;
+  const tempSongPath = `${TEMP_FILE_DIRECTORY}/${id}.mp3`;
+  const tempVideoPath = `${TEMP_FILE_DIRECTORY}/${id}${extension}`;
+  const tempOutputVideoPath = `${TEMP_FILE_DIRECTORY}/${id}-output${extension}`;
 
   const buffer = Buffer.from(await video.arrayBuffer());
 

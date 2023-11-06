@@ -1,8 +1,9 @@
+import { TEMP_FILE_DIRECTORY } from "utils/constants";
 import { Context, Next } from "hono";
 
 export const downloadsHandler = async (c: Context, next: Next) => {
   const fileName = c.req.param("file");
-  const file = Bun.file(`./temp/${fileName}`);
+  const file = Bun.file(`${TEMP_FILE_DIRECTORY}/${fileName}`);
   if (!(await file.exists())) {
     c.status(404);
     return c.body("File not found");

@@ -7,6 +7,20 @@ import { uploadHandler } from "./routes/upload/upload.handler";
 import { jobsProgressHandler } from "./routes/jobs/jobs-progress.handler";
 import { jobsHandler } from "./routes/jobs/jobs.handler";
 import { downloadsHandler } from "./routes/downloads/downloads.handler";
+import { Cron } from "croner";
+import { DELETE_JOB_CALLBACK } from "./utils/delete-cron-job";
+
+if (process.env.DEVELOPMENT !== "true") {
+  Cron(
+    "* * * * *",
+    {
+      protect: () => {
+        console.log("protect");
+      },
+    },
+    DELETE_JOB_CALLBACK
+  );
+}
 
 const app = new Hono();
 

@@ -19,6 +19,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "croner": "^7.0.4",
     "fluent-ffmpeg": "^2.1.2",
     "hono": "^3.6.0",
     "htmx.org": "^1.9.5",
