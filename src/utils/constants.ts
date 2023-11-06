@@ -30,3 +30,5 @@ export const ALLOWED_TYPES = new Set([
   ".webm",
   ".wmv",
 ]);
+
+export const TEMP_FILE_DIRECTORY = "./temp";
