@@ -38,6 +38,9 @@ songs/*
 # to keep cut up songs temporarily
 temp/*
 
+# to not commit htmx
+public/htmx.min.js
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

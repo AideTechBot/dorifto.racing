@@ -12,10 +12,12 @@ bun run dev
 
 ## Roadmap (by priority)
 
-- [ ] Dockerize everything
-- [ ] Fetch FFMPEG automatically in docker
-- [ ] Create Ansible scripts to deploy and copy default songs
+- [x] Dockerize everything
+- [x] Fetch FFMPEG automatically in docker
+- [x] Create scripts to deploy and copy default songs
 - [ ] Implement OTHER song uploading
 - [ ] Rate limit uploading
 - [ ] Add max file size
-- [ ] Limit file formats
+- [ ] Limit file formats (Client side)
+- [ ] Enable SSL
+- [ ] Make NGINX file upload faster
