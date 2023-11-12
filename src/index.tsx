@@ -12,7 +12,7 @@ import { DELETE_JOB_CALLBACK } from "./utils/delete-cron-job";
 
 if (process.env.DEVELOPMENT !== "true") {
   Cron(
-    "* * * * *",
+    "0 * * * *",
     {
       protect: () => {
         console.log("protect");

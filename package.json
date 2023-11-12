@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "cp node_modules/htmx.org/dist/htmx.min.js public/htmx.min.js && bun run src/index.tsx",
-    "dev": "bun --hot run src/index.tsx",
+    "start": "bun run src/index.tsx",
+    "dev": "cp ./node_modules/htmx.org/dist/htmx.min.js ./public/htmx.min.js && bun --hot run src/index.tsx",
+    "setup-stag": "sh ./scripts/setup.sh dorifto-stag",
+    "update-stag": "sh ./scripts/update.sh dorifto-stag",
     "lint": "prettier ./src --write",
     "release": "standard-version"
   },
