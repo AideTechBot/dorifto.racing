@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/AideTechBot/dorifto.racing/compare/v0.1.0...v0.1.1) (2023-11-13)
+
+
+### Features
+
+* **redesign:** :sparkles: added uploading indicator ([a97ed5c](https://github.com/AideTechBot/dorifto.racing/commit/a97ed5cb277ae9be8a8571ab297b101e144dde2c))
+
 ## 0.1.0 (2023-11-06)
 
 
