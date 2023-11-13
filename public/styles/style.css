@@ -75,6 +75,87 @@ main form {
   margin: 20px auto 5px auto;
 }
 
+.htmx-indicator {
+  visibility: collapse;
+  max-height: 0;
+  transition: visibility 500ms ease-in;
+  transition: max-height 100ms cubic-bezier(0, 1, 0, 1);
+}
+
+.htmx-request.htmx-indicator {
+  max-height: 80px;
+  visibility: visible;
+  transition: max-height 100ms ease-in-out;
+}
+
+main form > input[type="submit"].htmx-request {
+  display: none;
+}
+
+.uploading-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.uploading-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #000000;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.uploading-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: uploading-ellipsis1 0.6s infinite;
+}
+
+.uploading-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: uploading-ellipsis2 0.6s infinite;
+}
+
+.uploading-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: uploading-ellipsis2 0.6s infinite;
+}
+
+.uploading-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: uploading-ellipsis3 0.6s infinite;
+}
+
+@keyframes uploading-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes uploading-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes uploading-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
 main form > .song-upload-form {
   display: flex;
   flex-direction: column;
