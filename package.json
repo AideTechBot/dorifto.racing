@@ -7,6 +7,7 @@
     "dev": "cp ./node_modules/htmx.org/dist/htmx.min.js ./public/htmx.min.js && bun --hot run src/index.tsx",
     "setup-stag": "sh ./scripts/setup.sh dorifto-stag",
     "update-stag": "sh ./scripts/update.sh dorifto-stag",
+    "update-local": "docker compose down; docker compose up -d --build --force-recreate --no-deps",
     "lint": "prettier ./src --write",
     "release": "standard-version"
   },
