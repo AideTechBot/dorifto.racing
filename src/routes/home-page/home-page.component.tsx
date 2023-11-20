@@ -13,9 +13,6 @@ export function HomePage() {
           description="Overlay eurobeat over your favorite videos!"
         />
         <body>
-          {/* <!--google analytics-->
-      <?php include_once("analyticstracking.php") ?>
-     */}
           <header>
             <h1>
               <img
@@ -92,19 +89,6 @@ export function HomePage() {
               />
               <input type="submit" value="NANI? PANDA TRUENO??" name="submit" />
             </form>
-            {/* <?php
-        if (isset($_GET['error'])) {
-                  if ($_GET['error'] == 1) {
-                      echo '<p class="error">Error while processing request.</p>';
-                  }
-          if ($_GET['error'] == 2) { 
-            echo '<p class="error">Only mp3, wav, gif, mp4, mov and avi formats allowed.</p>';
-          }
-          if ($_GET['error'] == 3) {
-            echo '<p class="error">You need to wait 10 minutes before uploading another.</p>';
-          }
-              }	
-            ?>*/}
           </main>
           <footer>
             <img
