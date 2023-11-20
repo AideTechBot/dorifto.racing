@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/AideTechBot/dorifto.racing/compare/v0.1.2...v2.0.0) (2023-11-20)
+
+
+### Features
+
+* **redesign:** :chart_with_upwards_trend: add google analytics ([1eeded1](https://github.com/AideTechBot/dorifto.racing/commit/1eeded106fbb108fe996df76bcada70074635479))
+
 ### [0.1.2](https://github.com/AideTechBot/dorifto.racing/compare/v0.1.1...v0.1.2) (2023-11-20)
 
 
