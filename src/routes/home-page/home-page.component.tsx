@@ -1,6 +1,7 @@
 import { SONGS } from "utils/constants";
 import { HomePageHead } from "./home-page-head.component";
 import { html } from "hono/html";
+import { UploadButton } from "./upload-button.component";
 
 export function HomePage() {
   return (
@@ -47,14 +48,10 @@ export function HomePage() {
               method="post"
               enctype="multipart/form-data"
             >
-              <label for="video-upload">
-                <i class="fa fa-upload" />
-                Select a video to upload
-              </label>
-              <input
-                type="file"
-                id="video-upload"
-                name="video"
+              <UploadButton
+                label="Select a video to upload"
+                cssId="video-upload"
+                formName="video"
                 accepts="video/*"
               />
               <label for="song-select">
