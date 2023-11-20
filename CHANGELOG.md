@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/AideTechBot/dorifto.racing/compare/v0.1.1...v0.1.2) (2023-11-20)
+
+
+### Features
+
+* **redesign:** :sparkles: add file name to upload buttons ([5f7a82d](https://github.com/AideTechBot/dorifto.racing/commit/5f7a82ddd71c508bd2f65be433d47a9491b3f18a))
+* **redesign:** :sparkles: add upload song functionality + other ([b10f315](https://github.com/AideTechBot/dorifto.racing/commit/b10f31588a4ec701c8f11355a61155e6a15f389d))
+
 ### [0.1.1](https://github.com/AideTechBot/dorifto.racing/compare/v0.1.0...v0.1.1) (2023-11-13)
 
 
