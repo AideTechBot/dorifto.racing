@@ -40,11 +40,21 @@ export function HomePage() {
             </span>
           </header>
           <main>
+            <div class="loading-modal htmx-indicator">
+              <div>
+                <div class="uploading-ellipsis">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
             <h2>Overlay your favorite eurobeat onto videos!</h2>
             <form
               hx-post="/upload"
               hx-target="main"
-              hx-indicator='.uploading-ellipsis, main form > input[type="submit"]'
+              hx-indicator='.loading-modal, main form > input[type="submit"]'
               method="post"
               enctype="multipart/form-data"
             >
@@ -81,12 +91,6 @@ export function HomePage() {
                 min="1"
               />
               <input type="submit" value="NANI? PANDA TRUENO??" name="submit" />
-              <div class="htmx-indicator uploading-ellipsis">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
             </form>
             {/* <?php
         if (isset($_GET['error'])) {
