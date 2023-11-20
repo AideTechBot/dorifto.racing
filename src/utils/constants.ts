@@ -17,7 +17,7 @@ export const SONG_OPTIONS = {
 export const SONGS = Object.keys(SONG_OPTIONS);
 export const SONG_CLIMAXES = Object.values(SONG_OPTIONS);
 
-export const ALLOWED_TYPES = new Set([
+export const VIDEO_ALLOWED_TYPES = new Set([
   ".avi",
   ".flv",
   ".gif",
@@ -30,5 +30,7 @@ export const ALLOWED_TYPES = new Set([
   ".webm",
   ".wmv",
 ]);
+
+export const SONG_ALLOWED_TYPES = new Set([".mp3"]);
 
 export const TEMP_FILE_DIRECTORY = "./temp";

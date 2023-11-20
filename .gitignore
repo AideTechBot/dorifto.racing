@@ -28,11 +28,10 @@ yarn-error.log*
 # local env files
 .env*.local
 
-# TODO: create ffmpeg get script
 .env.development
 ffmpeg
 
-# TODO: songs must be added manually
+# songs must be added manually to deploy 
 songs/*
 
 # to keep cut up songs temporarily

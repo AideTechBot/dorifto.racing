@@ -1,11 +1,11 @@
 import { nanoid } from "nanoid";
 import type { Job, JobArguments, Jobs } from "./jobs.types";
-import { writeFile } from "node:fs";
 
 import ffmpeg from "fluent-ffmpeg";
 ffmpeg.setFfmpegPath("./ffmpeg");
 import { SONG_CLIMAXES, TEMP_FILE_DIRECTORY } from "./constants";
 import path from "node:path";
+import { saveFile } from "./jobs.utils";
 
 const _jobs: Jobs = {};
 
@@ -19,18 +19,24 @@ const _jobProcess = async (
   id: string,
   jobArgs: JobArguments
 ): Promise<string> => {
-  const { video, song, climax } = jobArgs;
+  const { video, song, climax, otherSong } = jobArgs;
+  const hasUploadedSong = song === 12 && !!otherSong;
   const { name } = video;
   const extension = path.extname(name);
-  const songPath = `./songs/${song}.mp3`;
-  const startPoint = SONG_CLIMAXES[song] - climax;
+  const startPoint = hasUploadedSong
+    ? otherSong.drop - climax
+    : SONG_CLIMAXES[song] - climax;
   const tempSongPath = `${TEMP_FILE_DIRECTORY}/${id}.mp3`;
+  const songPath = hasUploadedSong
+    ? `${TEMP_FILE_DIRECTORY}/${id}-upload.mp3`
+    : `./songs/${song}.mp3`;
   const tempVideoPath = `${TEMP_FILE_DIRECTORY}/${id}${extension}`;
   const tempOutputVideoPath = `${TEMP_FILE_DIRECTORY}/${id}-output${extension}`;
 
-  const buffer = Buffer.from(await video.arrayBuffer());
-
-  await new Promise((resolve) => writeFile(tempVideoPath, buffer, resolve));
+  await Promise.all([
+    saveFile(video, tempVideoPath),
+    hasUploadedSong ? saveFile(otherSong.audio, songPath) : Promise.resolve(),
+  ]);
 
   setJobProgress(id, 33);
 

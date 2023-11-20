@@ -11,17 +11,23 @@ export const uploadHandler = async (c: Context) => {
     ["song-drop"]: drop,
   } = await c.req.parseBody();
 
-  const error = await errorHandler(c, song, climax, video);
+  const error = await errorHandler(c, song, climax, video, audio, drop);
 
   // validate default input
   if (error) {
     return error;
   }
 
-  // case if song was uploaded
-  if (audio && drop) {
-    return c.html(<>Audio & Video</>);
-  }
-
-  return videoHandler(c, +song, +climax, video as File);
+  return videoHandler(
+    c,
+    +song,
+    +climax,
+    video as File,
+    audio && drop
+      ? {
+          audio: audio as File,
+          drop: +drop,
+        }
+      : undefined
+  );
 };
