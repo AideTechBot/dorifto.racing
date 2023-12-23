@@ -21,8 +21,9 @@ bun run dev
 - [x] Implement OTHER song uploading
 - [x] Rate limit uploading
 - [x] Add max file size
-- [ ] Add analytics
-- [ ] Enable SSL
+- [x] Add analytics
+- [x] Enable SSL
+- [ ] Add observability
 - [ ] Make NGINX cache stuff
 - [ ] Optimize images
 - [ ] Make NGINX file upload faster
