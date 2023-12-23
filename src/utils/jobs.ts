@@ -3,9 +3,10 @@ import type { Job, JobArguments, Jobs } from "./jobs.types";
 
 import ffmpeg from "fluent-ffmpeg";
 ffmpeg.setFfmpegPath("./ffmpeg");
-import { SONG_CLIMAXES, TEMP_FILE_DIRECTORY } from "./constants";
+import { SONG_CLIMAXES, TEMP_FILE_DIRECTORY } from "utils/constants";
 import path from "node:path";
-import { saveFile } from "./jobs.utils";
+import { saveFile } from "utils/jobs.utils";
+import { log } from "utils/logger";
 
 const _jobs: Jobs = {};
 
@@ -19,6 +20,8 @@ const _jobProcess = async (
   id: string,
   jobArgs: JobArguments
 ): Promise<string> => {
+  log(`[${id}] Started job`);
+
   const { video, song, climax, otherSong } = jobArgs;
   const hasUploadedSong = song === 12 && !!otherSong;
   const { name } = video;
@@ -44,6 +47,12 @@ const _jobProcess = async (
     ffmpeg(songPath)
       .seekInput(startPoint)
       .on("error", reject)
+      .on("start", (commandLine) => {
+        log(`[${id}] Spawned FFMPEG with command: ${commandLine}`);
+      })
+      .on("stderr", (stderrLine) => {
+        log(`[${id}] FFMPEG: ${stderrLine}`);
+      })
       .on("end", resolve)
       .output(tempSongPath)
       .run()
@@ -56,10 +65,10 @@ const _jobProcess = async (
       .input(tempSongPath)
       .videoCodec("copy")
       .audioCodec("aac")
-      .on("end", () => resolve())
       .on("stderr", (stderrLine) => {
-        console.log("Stderr output: " + stderrLine);
+        log(`[${id}] FFMPEG: ${stderrLine}`);
       })
+      .on("end", () => resolve())
       .output(tempOutputVideoPath)
       .outputOptions(["-shortest", "-map 0:v:0", "-map 1:a:0"])
       .run()
@@ -68,7 +77,9 @@ const _jobProcess = async (
   setJobProgress(id, 99);
   setTimeout(setJobProgress, 500, id, 100);
 
-  return `${id}-output${extension}`;
+  const returnFile = `${id}-output${extension}`;
+  log(`[${id}] Ended job with file ${returnFile}`);
+  return returnFile;
 };
 
 export const startJob = (
