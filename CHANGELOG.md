@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 2.1.0 (2023-12-23)
+
+
+### Features
+
+* **redesign:** :art: implement error handling and upload handler ([7e58276](https://github.com/AideTechBot/dorifto.racing/commit/7e5827675dfa1f8addd39fb57a52b221b110ba7e))
+* **redesign:** :chart_with_upwards_trend: add google analytics ([c8b9b46](https://github.com/AideTechBot/dorifto.racing/commit/c8b9b46fcf67fc8f650ffd88888bc232c37bebd7))
+* **redesign:** :label: add progress bar ([a5457bd](https://github.com/AideTechBot/dorifto.racing/commit/a5457bdd34e59058a4350b0313deddfb1bd76d79))
+* **redesign:** :lock: add SSL cert management ([c884220](https://github.com/AideTechBot/dorifto.racing/commit/c884220025a8f8f4d6479463ed37c232e092a01a))
+* **redesign:** :loud_sound: create centralized logger ([c7e487d](https://github.com/AideTechBot/dorifto.racing/commit/c7e487d06ce2e1857ce93aa0b03926b5a896e00b))
+* **redesign:** :recycle: add autodelete cron job ([b5e4328](https://github.com/AideTechBot/dorifto.racing/commit/b5e4328266daca3d97992185a1bf8bc72fe37dd7))
+* **redesign:** :rotating_light: add dorifto workflow with no song upload ([a706a05](https://github.com/AideTechBot/dorifto.racing/commit/a706a05a48871817b9787087593d189a4c1f757b))
+* **redesign:** :sparkles: add file name to upload buttons ([a17b37d](https://github.com/AideTechBot/dorifto.racing/commit/a17b37d0aad368dfa14f13914beaeef32bb6a0ce))
+* **redesign:** :sparkles: add upload song functionality + other ([ee0d9f9](https://github.com/AideTechBot/dorifto.racing/commit/ee0d9f98c41915e9ed2be2dd0bd195a3b38458fd))
+* **redesign:** :sparkles: added uploading indicator ([8492714](https://github.com/AideTechBot/dorifto.racing/commit/8492714259b1afe0d3d675f5fe3283353957d1ae))
+* **redesign:** :tada: create minimal bun + hono + htmx env ([5466b5a](https://github.com/AideTechBot/dorifto.racing/commit/5466b5a17c6758a29835aac2e85ba4f65f05e74b))
+* **redesign:** :white_check_mark: add other song upload ([6a932ac](https://github.com/AideTechBot/dorifto.racing/commit/6a932ac9468d65622fa59704faa61c1607f5edf8))
+
 ## [2.0.0](https://github.com/AideTechBot/dorifto.racing/compare/v0.1.2...v2.0.0) (2023-11-20)
 
 
