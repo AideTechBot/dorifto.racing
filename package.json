@@ -6,7 +6,9 @@
     "start": "bun run src/index.tsx",
     "dev": "cp ./node_modules/htmx.org/dist/htmx.min.js ./public/htmx.min.js && bun --hot run src/index.tsx",
     "setup-stag": "sh ./scripts/setup.sh dorifto-stag",
+    "setup-prod": "sh ./scripts/setup.sh dorifto",
     "update-stag": "sh ./scripts/update.sh dorifto-stag",
+    "update-prod": "sh ./scripts/update.sh dorifto",
     "update-local": "docker compose down; docker compose up -d --build --force-recreate --no-deps",
     "lint": "prettier ./src --write",
     "release": "standard-version"
