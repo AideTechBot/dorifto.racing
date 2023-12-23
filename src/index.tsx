@@ -9,13 +9,14 @@ import { jobsHandler } from "./routes/jobs/jobs.handler";
 import { downloadsHandler } from "./routes/downloads/downloads.handler";
 import { Cron } from "croner";
 import { DELETE_JOB_CALLBACK } from "./utils/delete-cron-job";
+import { log } from "./utils/logger";
 
 if (process.env.DEVELOPMENT !== "true") {
   Cron(
     "0 * * * *",
     {
       protect: () => {
-        console.log("protect");
+        log("Protected delete job from being called too many times.");
       },
     },
     DELETE_JOB_CALLBACK
@@ -23,6 +24,9 @@ if (process.env.DEVELOPMENT !== "true") {
 }
 
 const app = new Hono();
+
+// Set up logging
+app.use("*", logger(log));
 
 // Serve static files from the `public` folder
 app.use("*", serveStatic({ root: "./public" }));

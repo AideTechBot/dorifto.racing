@@ -2,6 +2,7 @@ import type { Context } from "hono";
 import { MessageComponent } from "utils/message.component";
 import { SONG_ALLOWED_TYPES, VIDEO_ALLOWED_TYPES } from "utils/constants";
 import path from "node:path";
+import { log } from "utils/logger";
 
 const _ipList: Record<string, number> = {};
 
@@ -18,13 +19,13 @@ export const errorHandler = async (
 
   // 5 minute cooldown on this endpoint based on IP
   if (ip && _ipList[ip] && Date.now() - _ipList[ip] < 300000) {
-    console.log(`Blocked IP ${ip} at ${Date.now()}`);
+    log(`Blocked IP ${ip}`);
     return c.html(
       <MessageComponent message="You can only upload once every 5 minutes." />
     );
   } else if (ip) {
     _ipList[ip] = Date.now();
-    console.log(`Upload by IP ${ip} at ${_ipList[ip]}`);
+    log(`Upload by IP ${ip} at ${_ipList[ip]}`);
   }
 
   if (!song || !climax || !video) {

@@ -20,7 +20,6 @@ export function UploadButton(props: {
           document.getElementById("${cssId}").onchange = () => {
             const val =
               document.getElementById("${cssId}")?.files[0]?.name ?? "";
-            console.log(val);
             document.getElementById("${labelClass}").childNodes[1].textContent =
               val === "" ? "${label}" : val;
           };
