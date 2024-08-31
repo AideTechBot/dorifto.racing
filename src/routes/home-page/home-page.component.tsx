@@ -32,7 +32,9 @@ export function HomePage() {
               </h2>
               <h2>
                 <i class="fa fa-globe"></i>
-                <a href="https://mdionne.me">Website</a>
+                <a href="https://mdionne.me?utm_source=dorifto.racing&utm_medium=Index&utm_campaign=Aug2024">
+                  Website
+                </a>
               </h2>
             </span>
           </header>
