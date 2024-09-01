@@ -2,7 +2,6 @@ import { nanoid } from "nanoid";
 import type { Job, JobArguments, Jobs } from "./jobs.types";
 
 import ffmpeg from "fluent-ffmpeg";
-ffmpeg.setFfmpegPath("./ffmpeg");
 import { SONG_CLIMAXES, TEMP_FILE_DIRECTORY } from "utils/constants";
 import path from "node:path";
 import { saveFile } from "utils/jobs.utils";
